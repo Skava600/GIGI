@@ -35,8 +35,10 @@
                 </div>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                     <div class="dropdown-item-text">
-                        <img src="Images/avatar.png" width="70"
-                             alt="User" class="rounded" />
+                        <a href=https://scholar.google.com/citations?user=hgQDXDQAAAAJ&hl=ru">
+                            <img src="Images/avatar.png" width="70"
+                                 alt="User" class="rounded" />
+                        </a>
                         uskava7@gmail.com
                     </div>
                     <div class="dropdown-divider"></div>
@@ -53,11 +55,11 @@
     <main class="container">
         <div>
             <h1 class="bold">
-            Лабораторная работа 1
+                Лабораторная работа 1
             </h1>
 
             <h2 class="bold">
-            Список
+                Список
             </h2>
 
             <ol type="A">
@@ -65,41 +67,77 @@
                 <li>Элемент 2 списка</li>
             </ol>
             <hr />
-        </div>
-        <form method="get">
-
             <div>
                 <h2 class="bold">
                     Форма
                 </h2>
 
             </div>
-            <fieldset>
-                <input type="checkbox"> создание пунктуальности (никогда не
-                будете никуда опаздывать);<br>
-                <input type="checkbox"> излечение от пунктуальности (никогда
-                никуда не будете торопиться);<br>
-                <input type="checkbox"> изменение восприятия времени и часов.
-            </fieldset>
+        </div>
+     
 
-            <div class="container">
+        <form method="post">
+            <!-- Column of checkboxes -->
 
-                <div class="row">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Радио 1</label>
-                    </div>
+            <div class="form-check move-left">
+                <input class="form-check-input" type="checkbox" value="on" id="defaultCheck1" name="Check1">
+                <label class="form-check-label" for="defaultCheck1">Чек-бокс 1</label>
+            </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Радио 2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Радио 3</label>
-                    </div>
+            <div class="form-check move-left">
+                <input class="form-check-input" type="checkbox" value="on" id="defaultCheck1" name="Check2">
+                <label class="form-check-label" for="defaultCheck1">Чек-бокс 2</label>
+            </div>
+            <!-- Column of checkboxes -->
+            <!-- Inline RadioOptons-->
+            <div class="form-check-inline move-left">
+
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="RadioOption1">
+                <label class="form-check-label" for="inlineRadio1">Радио 1</label>
+
+            </div>
+
+            <div class="form-check-inline">
+
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="RadioOtion2">
+                <label class="form-check-label" for="inlineRadio2">Радио 2</label>
+
+            </div>
+
+            <div class="form-check-inline">
+
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="RadioOption3">
+                <label class="form-check-label" for="inlineRadio3">Радио 3</label>
+
+            </div>
+
+
+            <!-- Inline RadioOptons-->
+
+
+            <div class="form-group row">
+                <label for="inputLogin" class="col-sm-2 col-form-label">Логин</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Login" id="inputEmail1" placeholder="Имя пользователя">
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="Password" id="inputPassword" placeholder="Пароль">
+                </div>
+            </div>
+
+            <div class="form-check">
+
+                <button type="submit" class="btn btn-primary">Отправить</button>
+
+            </div>
+
+
+
+
         </form>
 
 
@@ -107,7 +145,7 @@
 
     <footer>
         <!-- Подвал страницы -->
-        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark fixed-bottom">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="http://www.facebook.com">
                     <i class="fab fa-facebook-f fa-2x"></i>

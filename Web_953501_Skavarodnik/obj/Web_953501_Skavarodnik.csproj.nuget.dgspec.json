@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivasi\\source\\repos\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj": {}
+    "C:\\Users\\vladi\\Source\\Repos\\GIGI\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivasi\\source\\repos\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj": {
+    "C:\\Users\\vladi\\Source\\Repos\\GIGI\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivasi\\source\\repos\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj",
+        "projectUniqueName": "C:\\Users\\vladi\\Source\\Repos\\GIGI\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj",
         "projectName": "Web_953501_Skavarodnik",
-        "projectPath": "C:\\Users\\ivasi\\source\\repos\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj",
-        "packagesPath": "C:\\Users\\ivasi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivasi\\source\\repos\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik\\obj\\",
+        "projectPath": "C:\\Users\\vladi\\Source\\Repos\\GIGI\\Web_953501_Skavarodnik\\Web_953501_Skavarodnik.csproj",
+        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladi\\Source\\Repos\\GIGI\\Web_953501_Skavarodnik\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ivasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
