@@ -27,7 +27,7 @@ namespace Web_953501_Skavarodnik.Controllers
         }
             public IActionResult Index()
         {
-            Text = "Лабораторная работа 2";
+            Text = "Лабораторная работа 4";
             ViewData["Lst"] = new SelectList(_listDemo, "ListItemValue", "ListItemText");
             return View();
         }

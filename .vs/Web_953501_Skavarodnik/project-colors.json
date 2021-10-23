@@ -5,6 +5,11 @@
       "ProjectGuid": "0940da8f-dfc8-4b1c-9900-59af3d16dfb4",
       "DisplayName": "Web_953501_Skavarodnik",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1
