@@ -26,8 +26,15 @@ using Web_953501_Skavarodnik.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\study\6term\GIGI\Web_953501_Skavarodnik\Views\_ViewImports.cshtml"
+using Web_953501_Skavarodnik.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"04d466ca1fcb2e54c4eb6c1d4c662931601ae340", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0e9623b94e51723129f8075e4af55832e1306784", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

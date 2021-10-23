@@ -9,8 +9,8 @@ namespace Web_953501_Skavarodnik.Components
         // Инициализация списка элементов меню
         private List<MenuItem> _menuItems = new()
         {
-            new MenuItem{ Controller="Home", Action="Index", Text="Lab 3"},
-            new MenuItem{ Controller="Product", Action="Index",
+            new MenuItem{ Controller="Home", Action="Index", Text="Lab 5"},
+            new MenuItem{ Controller="Drink", Action="Index",
                 Text="Каталог"},
             new MenuItem{ IsPage=true, Area="Admin", Page="/Index",
             Text="Администрирование"}
