@@ -10,15 +10,15 @@ using Web_953501_Skavarodnik.Data;
 namespace Web_953501_Skavarodnik.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211023124442_Initial")]
-    partial class Initial
+    [Migration("20211030105139_initital")]
+    partial class initital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -99,12 +99,10 @@ namespace Web_953501_Skavarodnik.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -141,12 +139,10 @@ namespace Web_953501_Skavarodnik.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -163,6 +159,9 @@ namespace Web_953501_Skavarodnik.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<byte[]>("AvatarImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -221,6 +220,50 @@ namespace Web_953501_Skavarodnik.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.Drink", b =>
+                {
+                    b.Property<int>("DrinkId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DrinkGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DrinkName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Volume")
+                        .HasColumnType("int");
+
+                    b.HasKey("DrinkId");
+
+                    b.HasIndex("DrinkGroupId");
+
+                    b.ToTable("Drinks");
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.DrinkGroup", b =>
+                {
+                    b.Property<int>("DrinkGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DrinkGroupId");
+
+                    b.ToTable("DrinkGroups");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -270,6 +313,22 @@ namespace Web_953501_Skavarodnik.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.Drink", b =>
+                {
+                    b.HasOne("Web_953501_Skavarodnik.Entities.DrinkGroup", "Group")
+                        .WithMany("Drinks")
+                        .HasForeignKey("DrinkGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.DrinkGroup", b =>
+                {
+                    b.Navigation("Drinks");
                 });
 #pragma warning restore 612, 618
         }

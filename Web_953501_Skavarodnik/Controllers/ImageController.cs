@@ -23,10 +23,9 @@ namespace Web_953501_Skavarodnik.Controllers
                 return File(user.AvatarImage, "image/...");
             else
             {
-                var avatarPath = "/Images/anonymous.png";
+                var avatarPath = "/images/anon.png";
                 return File(_env.WebRootFileProvider
                 .GetFileInfo(avatarPath)
-
                 .CreateReadStream(), "image/...");
 
             }

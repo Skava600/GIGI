@@ -218,6 +218,50 @@ namespace Web_953501_Skavarodnik.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.Drink", b =>
+                {
+                    b.Property<int>("DrinkId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DrinkGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DrinkName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Volume")
+                        .HasColumnType("int");
+
+                    b.HasKey("DrinkId");
+
+                    b.HasIndex("DrinkGroupId");
+
+                    b.ToTable("Drinks");
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.DrinkGroup", b =>
+                {
+                    b.Property<int>("DrinkGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DrinkGroupId");
+
+                    b.ToTable("DrinkGroups");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -267,6 +311,22 @@ namespace Web_953501_Skavarodnik.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.Drink", b =>
+                {
+                    b.HasOne("Web_953501_Skavarodnik.Entities.DrinkGroup", "Group")
+                        .WithMany("Drinks")
+                        .HasForeignKey("DrinkGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("Web_953501_Skavarodnik.Entities.DrinkGroup", b =>
+                {
+                    b.Navigation("Drinks");
                 });
 #pragma warning restore 612, 618
         }

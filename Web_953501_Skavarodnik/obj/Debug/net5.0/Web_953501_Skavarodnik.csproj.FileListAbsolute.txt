@@ -340,3 +340,4 @@ C:\study\6term\GIGI\Web_953501_Skavarodnik\obj\Debug\net5.0\Razor\Areas\Identity
 C:\study\6term\GIGI\Web_953501_Skavarodnik\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\study\6term\GIGI\Web_953501_Skavarodnik\obj\Debug\net5.0\Razor\Views\Drink\Index.cshtml.g.cs
 C:\study\6term\GIGI\Web_953501_Skavarodnik\obj\Debug\net5.0\Razor\Views\Drink\_ListItemPartial.cshtml.g.cs
+C:\study\6term\GIGI\Web_953501_Skavarodnik\obj\Debug\net5.0\Razor\Views\Drink\_ListPartial.cshtml.g.cs
