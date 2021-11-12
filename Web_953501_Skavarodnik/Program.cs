@@ -21,6 +21,12 @@ namespace Web_953501_Skavarodnik
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureLogging(lp =>
+                {
+                    lp.ClearProviders();
+                    lp.AddFilter("Microsoft", LogLevel.None);
                 });
+
+
     }
 }

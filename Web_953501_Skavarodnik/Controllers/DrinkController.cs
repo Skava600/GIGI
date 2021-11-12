@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using Web_953501_Skavarodnik.Data;
@@ -12,10 +13,13 @@ namespace Web_953501_Skavarodnik.Controllers
     {
         int _pageSize;
         ApplicationDbContext _context;
-        public DrinkController(ApplicationDbContext context)
+        private ILogger _logger;
+        public DrinkController(ApplicationDbContext context,
+            ILogger<DrinkController> logger)
         {
             _pageSize = 3;
             _context = context;
+            _logger = logger;
         }
 
         [Route("Catalog")]

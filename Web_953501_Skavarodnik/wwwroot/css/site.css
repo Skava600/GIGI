@@ -11,3 +11,11 @@ header, footer {
 .move-left{
     margin-left: 20%;
 }
+footer {
+    margin-bottom: 100px
+}
+
+p {
+    padding: 2em;
+    border: 1px dashed #CCC
+}

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -7,12 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Web_953501_Skavarodnik.Data;
 using Web_953501_Skavarodnik.Entities;
+using Web_953501_Skavarodnik.Extensions;
+using Web_953501_Skavarodnik.Models;
+using Web_953501_Skavarodnik.Services;
 
 namespace Web_953501_Skavarodnik
 {
@@ -48,6 +53,14 @@ namespace Web_953501_Skavarodnik
                 .AddDefaultTokenProviders();
             services.AddAuthorization();
 
+            services.AddDistributedMemoryCache();
+            services.AddSession(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<Cart>(sp => CartService.GetCart(sp));
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
@@ -56,8 +69,12 @@ namespace Web_953501_Skavarodnik
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env,
+            ILoggerFactory logger)
         {
+            logger.AddFile("Logs/log-{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -73,8 +90,10 @@ namespace Web_953501_Skavarodnik
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseFileLogging();
 
             app.UseAuthentication();
+            app.UseSession();
             app.UseAuthorization();
             DbInitializer.Seed(app).Wait();
             app.UseEndpoints(endpoints =>
