@@ -1,0 +1,39 @@
+﻿@page "/counter"
+@using Helpers
+<EditForm Model="model" OnValidSubmit="SetCounter">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputNumber @bind-Value="model.NewValue"></InputNumber>
+
+    <input type="submit"
+           class="btn btn-outline-info mt-2 mb-2"
+           value="Set counter">
+</EditForm>
+
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private HelpModel model;
+
+    protected override void OnInitialized()
+    {
+        model = new HelpModel();
+    }
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    private void SetCounter()
+    {
+        currentCount = model.NewValue;
+    }
+
+}
